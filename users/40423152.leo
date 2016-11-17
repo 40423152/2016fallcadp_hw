@@ -58,9 +58,11 @@
 <v t="leo.20161027163933.1"><vh>@edit 20161013.md</vh></v>
 <v t="leo.20161027163237.1"><vh>@edit 20161020.md</vh></v>
 <v t="leo.20161027160850.1"><vh>@edit 20161027.md</vh></v>
+<v t="leo.20161117154859.1"><vh>@edit 20161117.md</vh></v>
 </v>
 </v>
 </v>
+<v t="leo.20161117154908.1"><vh>@button https server</vh></v>
 <v t="amd.20160106094754.1" a="E"><vh>@path ./../content/pages</vh>
 <v t="amd.20160106094829.1" a="E"><vh>yen 所寫的 pages 文章</vh>
 <v t="amd.20160106094844.1"><vh>@edit pages_1.md</vh></v>
@@ -209,5 +211,27 @@ PLUGINS = ['liquid_tags.notebook', 'summary']
 <t tx="leo.20151213230957.1"># 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
 
 DEFAULT_DATE = 'fs'</t>
+<t tx="leo.20161117154908.1">@language python
+import os
+import subprocess
+import threading
+import http.server, ssl
+
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 8443)
+    httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("8443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
 </tnodes>
 </leo_file>
