@@ -55,9 +55,7 @@ ctx.closePath()
 &lt;/script&gt;
 
 &lt;p&gt;直接利用 Solvespace Analyze-Trace Point-Stop Trace 得到下列繞行路徑:&lt;/p&gt;
-&lt;p&gt;&lt;img src="./../data/2016-11-17_15-19-56.png" width="800" /&gt;&lt;/p&gt;
-&lt;p&gt;將所得到的點座標 .csv 以 Excel 畫圖, 得到:&lt;/p&gt;
-&lt;p&gt;&lt;img src="./../data/2016-11-17_15-19-50.png" width="800" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="./../data/ZZZ.png" width="800" /&gt;&lt;/p&gt;
 &lt;h4&gt;Export Triangle Mesh&lt;/h4&gt;
 &lt;p&gt;STL 格式&lt;/p&gt;
 &lt;p&gt;three.js&lt;/p&gt;
